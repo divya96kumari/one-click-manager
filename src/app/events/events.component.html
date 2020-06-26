@@ -1,0 +1,36 @@
+<div class="event-container">
+    <h4 class="event-header">This week</h4>
+    <div class="card-div">
+        <div class="card_container" *ngFor="let item of events">
+
+            <a href="..." class="card clickable">
+                <div class="card-block card-size">
+                    <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
+                        [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>
+                    <div *ngFor = "let detail of item.event">
+                        <div class="pos-abs" [ngStyle]="detail.style">{{detail.text}}</div>
+                    </div>
+                    
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <h4 class="event-header">This month</h4>
+    <div class="card-div">
+        <div class="card_container" *ngFor="let item of later_events">
+
+            <a href="..." class="card clickable">
+                <div class="card-block card-size">
+                    <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
+                        [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>
+                    <div *ngFor = "let detail of item.event">
+                        <div class="pos-abs" [ngStyle]="detail.style">{{detail.text}}</div>
+                    </div>
+                    
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>

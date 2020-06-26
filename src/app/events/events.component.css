@@ -1,0 +1,37 @@
+.event-container{
+    margin:24px;
+}
+
+.event-header{
+    background-color: steelblue;
+    padding: 6px;
+    border-radius: 2px;
+    color: white;
+    box-shadow: 2px 2px 4px black;
+}
+
+.card-div{
+    display: flex;
+}
+
+.card_container{
+    margin-right: 20px;
+    
+}
+
+.card-size{
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    box-shadow: 2px 2px 4px black;
+}
+
+.card-bg{
+    height: 250px;
+    opacity: 0.8;
+    position: relative;
+}
+
+.pos-abs{
+    position: absolute;
+}

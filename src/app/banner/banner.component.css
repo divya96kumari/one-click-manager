@@ -1,0 +1,60 @@
+.bg-div{
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    position: relative;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.main-div{
+    height: 350px;
+}
+
+.banner-container{
+    position: absolute;
+    height: 350px;
+    margin:24px;
+}
+
+.event-display{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin:24px;
+    top:5px;
+    position: absolute;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: Georgia, serif;
+}
+
+.des-display{
+    font-size: 16px;
+    color: white;
+    margin: 24px;
+    position: absolute;
+    top:80px;
+    text-shadow: 2px 1px 2px #000000;
+}
+
+.date-display{
+    font-size: 1rem;
+    font-weight: bolder;
+    color: white;
+    top:200px;
+    left: 40px;
+    float: right;
+    position: absolute;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.timer-display{
+    top:250px;
+    left:37%;
+    position: absolute;
+}
+
+.bg{
+    background-color: azure;
+}

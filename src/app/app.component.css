@@ -1,0 +1,20 @@
+:host ::ng-deep .modal-header{
+    padding: 0;
+} 
+
+:host ::ng-deep .modal-dialog .modal-content{
+    padding:0;
+}
+
+:host ::ng-deep .modal-body{
+    padding: 0;
+} 
+
+.blue_underline{
+    color: #0092d1;
+    text-underline-position: below;
+    cursor: pointer;
+}
+
+
+
