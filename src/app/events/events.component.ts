@@ -18,7 +18,7 @@ export class EventsComponent implements OnInit {
       {
         text: 'Progress Made Real - Food for Needy',
         style: {
-          'font-size': '28px',
+          'font-size': '24px',
           'font-weight': 'bolder',
           'margin': '5px',
           'top': '8px',
@@ -92,11 +92,11 @@ export class EventsComponent implements OnInit {
       {
         text: 'Hackathon',
         style: {
-          'font-size': '30px',
+          'font-size': '24px',
           'font-weight': 'bolder',
           'margin': '5px',
           'top': '45px',
-          'left': '17%',
+          'left': '25%',
           'color': 'white',
           'text-shadow': '2px 2px 4px #000000'
         }
@@ -140,7 +140,7 @@ export class EventsComponent implements OnInit {
       {
         text: 'Nature Photography Contest',
         style: {
-          'font-size': '30px',
+          'font-size': '24px',
           'font-weight': 'bolder',
           'font-family': 'Georgia, serif',
           'margin': '5px',
@@ -199,10 +199,10 @@ export class EventsComponent implements OnInit {
       {
         text: 'Quaterly Outing',
         style: {
-          'font-size': '28px',
+          'font-size': '24px',
           'font-weight': 'bolder',
           'margin': '5px',
-          'left': '3%',
+          'left': '10%',
           'top': '35px',
           'text-align': 'center',
           'color': 'Red',
@@ -255,7 +255,7 @@ export class EventsComponent implements OnInit {
             'top': '7px',
             'left': '15%',
             'color': 'azure',
-            'background':'blue',
+            'background':'#3393FF',
             'font-family': 'Georgia, serif',
             'padding':'2px'
           }
@@ -263,7 +263,7 @@ export class EventsComponent implements OnInit {
         {
           text: 'Lessons in Leadership',
           style: {
-            'font-size': '30px',
+            'font-size': '24px',
             'font-weight': 'bolder',
             'margin': '5px',
             'top': '55px',
@@ -316,7 +316,7 @@ export class EventsComponent implements OnInit {
       {
         text: 'Volleyball Tournament',
         style: {
-          'font-size': '30px',
+          'font-size': '24px',
           'font-weight': 'bolder',
           'margin': '5px',
           'left': '3%',
