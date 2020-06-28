@@ -1,37 +1,92 @@
-.event-container{
-    margin:24px;
+.event-container {
+  margin: 24px;
 }
 
-.event-header{
-    background-color: steelblue;
-    padding: 6px;
-    border-radius: 2px;
-    color: white;
-    box-shadow: 2px 2px 4px black;
+.event-header {
+  background-color: steelblue;
+  padding: 6px;
+  border-radius: 2px;
+  color: white;
+  box-shadow: 2px 2px 4px black;
 }
 
-.card-div{
-    display: flex;
+.card-div {
+  display: flex;
 }
 
-.card_container{
-    margin-right: 20px;
-    
+.card_container {
+  margin-right: 20px;
 }
 
-.card-size{
-    width: 250px;
-    height: 250px;
-    padding: 0;
-    box-shadow: 2px 2px 4px black;
+.card-size {
+  width: 250px;
+  height: 250px;
+  padding: 0;
+  box-shadow: 2px 2px 4px black;
 }
 
-.card-bg{
-    height: 250px;
-    opacity: 0.8;
-    position: relative;
+.card-bg {
+  height: 250px;
+  opacity: 0.7;
+  position: relative;
 }
 
-.pos-abs{
-    position: absolute;
+.pos-abs {
+  position: absolute;
+}
+
+.cb-cont {
+  width: 187px;
+  height: 70px;
+  border: solid 2px #065863;
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.cb-text {
+  text-align: center;
+  position: absolute;
+  top: 19px;
+  left: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #065863;
+}
+
+.cb-icon {
+  top: 13px;
+  left: 141px;
+  position: absolute;
+  color: #065863;
+  font-weight: bold;
+}
+
+.input-width {
+  width: 100%;
+}
+
+.textarea-dim {
+  width: 100%;
+  height: 4rem;
+}
+
+.form-dim {
+  margin-left: 5.2rem;
+  margin-right: 5.2rem;
+}
+
+.marginTop {
+  margin-top: 18px;
+  margin-bottom: 25px;;
+}
+
+.event-title-pos {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  margin-top: 15px;
+  text-align: center;
 }

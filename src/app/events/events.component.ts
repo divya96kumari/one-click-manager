@@ -84,8 +84,8 @@ export class EventsComponent implements OnInit {
           'left': '15%',
           'color': 'Blue',
           'text-shadow': '2px 2px 4px white',
-          'background':'azure',
-          'padding':'2px',    
+          'background': 'azure',
+          'padding': '2px',
           'font-family': 'Georgia, serif'
         }
       },
@@ -101,7 +101,7 @@ export class EventsComponent implements OnInit {
           'text-shadow': '2px 2px 4px #000000'
         }
       },
-      
+
       {
         text: 'Seamless Edge - Core - Cloud',
         style: {
@@ -195,7 +195,7 @@ export class EventsComponent implements OnInit {
       bgPosition: 'center'
     },
     event: [
-      
+
       {
         text: 'Quaterly Outing',
         style: {
@@ -209,7 +209,7 @@ export class EventsComponent implements OnInit {
           'text-shadow': '2px 2px 4px #000000',
         }
       },
-      
+
       {
         text: 'Venue - Palm Meadows Resort ',
         style: {
@@ -238,71 +238,71 @@ export class EventsComponent implements OnInit {
       }
     ]
   },
-    {
-      id: 'le-3',
-      bg: {
-        bgImage: 'assets/technical1-card.jpg',
-        bgSize: '100% 100%',
-        bgPosition: 'center'
-      },
-      event: [
-        {
-          text: 'Women in Action',
-          style: {
-            'font-size': '20px',
-            'margin': '5px',
-            'font-weight': 'bold',
-            'top': '7px',
-            'left': '15%',
-            'color': 'azure',
-            'background':'#3393FF',
-            'font-family': 'Georgia, serif',
-            'padding':'2px'
-          }
-        },
-        {
-          text: 'Lessons in Leadership',
-          style: {
-            'font-size': '24px',
-            'font-weight': 'bolder',
-            'margin': '5px',
-            'top': '55px',
-            'left': '3%',
-            'text-align': 'center',
-            'color': 'white',
-            'text-shadow': '2px 2px 4px #000000',
-            'font-family': 'Georgia, serif'
-          }
-        },
-        
-        {
-          text: '- Sudha KV serves as Vice President – Development Engineering',
-          style: {
-            'font-size': '16px',
-            'font-weight': 'bolder',
-            'margin': '5px',
-            'top': '120px',
-            'left': '5px',
-            'color': 'black',
-            'text-align': 'center',
-            'text-shadow': '2px 2px 4px white',
-            'font-family': 'Georgia, serif'
-          }
-        },
-        {
-          text: 'Date - 10th July',
-          style: {
-            'font-size': '16px',
-            'font-weight': 'bolder',
-            'margin': '5px',
-            'top': '80%',
-            'color': 'blue',
-            'left': '26%',
-            'text-align': 'center'
-          }
+  {
+    id: 'le-3',
+    bg: {
+      bgImage: 'assets/technical1-card.jpg',
+      bgSize: '100% 100%',
+      bgPosition: 'center'
+    },
+    event: [
+      {
+        text: 'Women in Action',
+        style: {
+          'font-size': '20px',
+          'margin': '5px',
+          'font-weight': 'bold',
+          'top': '7px',
+          'left': '15%',
+          'color': 'azure',
+          'background': '#3393FF',
+          'font-family': 'Georgia, serif',
+          'padding': '2px'
         }
-      ],
-    
+      },
+      {
+        text: 'Lessons in Leadership',
+        style: {
+          'font-size': '24px',
+          'font-weight': 'bolder',
+          'margin': '5px',
+          'top': '55px',
+          'left': '3%',
+          'text-align': 'center',
+          'color': 'white',
+          'text-shadow': '2px 2px 4px #000000',
+          'font-family': 'Georgia, serif'
+        }
+      },
+
+      {
+        text: '- Sudha KV serves as Vice President – Development Engineering',
+        style: {
+          'font-size': '16px',
+          'font-weight': 'bolder',
+          'margin': '5px',
+          'top': '120px',
+          'left': '5px',
+          'color': 'black',
+          'text-align': 'center',
+          'text-shadow': '2px 2px 4px white',
+          'font-family': 'Georgia, serif'
+        }
+      },
+      {
+        text: 'Date - 10th July',
+        style: {
+          'font-size': '16px',
+          'font-weight': 'bolder',
+          'margin': '5px',
+          'top': '80%',
+          'color': 'blue',
+          'left': '26%',
+          'text-align': 'center'
+        }
+      }
+    ],
+
   },
   {
     id: 'le-4',
@@ -312,7 +312,7 @@ export class EventsComponent implements OnInit {
       bgPosition: 'center'
     },
     event: [
-      
+
       {
         text: 'Volleyball Tournament',
         style: {
@@ -326,7 +326,7 @@ export class EventsComponent implements OnInit {
           'text-shadow': '2px 2px 4px #000000',
         }
       },
-      
+
       {
         text: 'Venue - Volleyball court (Dell 5) ',
         style: {
@@ -354,10 +354,137 @@ export class EventsComponent implements OnInit {
         }
       }
     ]
-  },]
+  },];
+
+  custom_events = [];
+  eventForm;
+
+  customEvent: any = {
+    type: "",
+    name: "",
+    venue: "",
+    startDate: "",
+    endDate: "",
+    description: ""
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  openEventForm() {
+    this.eventForm = true;
+  }
+
+  createCustomEvent() {
+    this.eventForm = false;
+    let newCustomEventObj = { ...this.customEvent };
+    this.customEvent = {
+      type: "",
+      name: "",
+      venue: "",
+      startDate: "",
+      endDate: "",
+      description: ""
+    };
+
+    if (newCustomEventObj) {
+  
+      let bgImageCard = "";
+      let fontColor="";
+      let venueColor="";
+      let dateColor="";
+      if (newCustomEventObj.type === "csr") {
+        bgImageCard = "assets/csr-card.jpg";
+        fontColor="black";
+        venueColor="black";
+        dateColor="white";
+      } else if (newCustomEventObj.type === "technical") {
+        bgImageCard = "assets/technical1-card.jpg";
+        fontColor="white";
+        venueColor="black";
+        dateColor="blue";
+      } else if (newCustomEventObj.type === "hackathon") {
+        bgImageCard = "assets/hackathon2-card.jpg";
+        fontColor="white";
+        venueColor="black";
+        dateColor="white";
+      } else if (newCustomEventObj.type === "sport") {
+        bgImageCard = "assets/sports-card.jpg";
+        fontColor="white";
+        venueColor="black";
+        dateColor="white";
+      } else if (newCustomEventObj.type === "festival") {
+        bgImageCard = "assets/festival-card.jpg";
+        fontColor="white";
+        venueColor="black";
+        dateColor="white";
+      } else if (newCustomEventObj.type === "outing") {
+        bgImageCard = "assets/outing-card.jpg";
+        fontColor="blue";
+        venueColor="black";
+        dateColor="white";
+      } else if (newCustomEventObj.type === "celebration") {
+        bgImageCard = "assets/event.jpg";
+        fontColor="white";
+        venueColor="blue";
+        dateColor="white";
+      }
+
+      console.log('Image', bgImageCard);
+      let createEvent = {
+        bg: {
+          bgImage: bgImageCard,
+          bgSize: '100% 100%',
+          bgPosition: 'center'
+        },
+        event: [
+          {
+            text: newCustomEventObj.name,
+            style: {
+              'font-size': '24px',
+              'font-weight': 'bolder',
+              'font-family': 'Georgia, serif',
+              'margin': '5px',
+              'top': '15px',
+              'color': fontColor,
+              'text-shadow': '2px 2px 4px black',
+              'text-align': 'center',
+              'width': '100%'
+            }
+          },
+          {
+            text: "Venue - " + newCustomEventObj.venue,
+            style: {
+              'font-size': '18px',
+              'font-family': 'Georgia, serif',
+              'margin': '5px',
+              'top': '120px',
+              'color': venueColor,
+              'font-weight': 'bold',
+              'width': '100%',
+              'text-align': 'center',
+              'text-shadow': '2px 2px 3px white'
+            }
+          },
+          {
+            text: "Last Date :-" + newCustomEventObj.endDate,
+            style: {
+              'font-size': '16px',
+              'font-weight': 'bolder',
+              'margin': '5px',
+              'top': '80%',
+              'color': dateColor, 
+              'width': '100%',
+              'text-align': 'center',            
+              'text-shadow': '2px 2px 3px black'
+            }
+          }
+        ]
+      }
+      this.custom_events.push(createEvent);
+    }
+    console.log("custom event", this.custom_events);
+  }
 }

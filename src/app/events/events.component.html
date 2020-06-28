@@ -1,4 +1,24 @@
 <div class="event-container">
+    <div class="cb-cont" (click)="openEventForm()">
+        <span class="cb-text">Create event</span>
+        <clr-icon class="cb-icon" size="34" shape="plus"></clr-icon>
+    </div>
+    <h4 class="event-header" *ngIf="custom_events[0]">Custom events</h4>
+    <div class="card-div">
+        <div class="card_container" *ngFor="let item of custom_events">
+            <a href="..." class="card clickable">
+                <div class="card-block card-size">
+                    <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
+                        [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>
+                    <div *ngFor="let detail of item.event">
+                        <div class="pos-abs" [ngStyle]="detail.style">
+                            {{detail.text}}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
     <h4 class="event-header">This week</h4>
     <div class="card-div">
         <div class="card_container" *ngFor="let item of events">
@@ -7,10 +27,10 @@
                 <div class="card-block card-size">
                     <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
                         [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>
-                    <div *ngFor = "let detail of item.event">
+                    <div *ngFor="let detail of item.event">
                         <div class="pos-abs" [ngStyle]="detail.style">{{detail.text}}</div>
                     </div>
-                    
+
                 </div>
             </a>
 
@@ -24,13 +44,99 @@
                 <div class="card-block card-size">
                     <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
                         [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>
-                    <div *ngFor = "let detail of item.event">
+                    <div *ngFor="let detail of item.event">
                         <div class="pos-abs" [ngStyle]="detail.style">{{detail.text}}</div>
                     </div>
-                    
+
                 </div>
             </a>
 
         </div>
     </div>
+
+    <clr-modal [clrModalOpen]="eventForm" [clrModalClosable]="false" [clrModalSize]="'lg'">
+
+        <div class="modal-body">
+            <div style="background: url('assets/yellow.jpg') no-repeat; background-size: 100% 100%; opacity: 0.8">
+                <form clrForm class="form-dim">
+                    <section>
+                        <div class="event-title-pos">Event Details</div>
+                    </section>
+                    <div class="clr-form-control clr-row">
+                        <label for="basic" class="clr-control-label clr-col-4">Types</label>
+                        <div class="clr-control-container clr-col-8">
+                            <div class="clr-select-wrapper input-width">
+                                <select class="clr-select input-width" name="type" [(ngModel)]="customEvent.type"
+                                    required>
+                                    <option value="">Select</option>
+                                    <option value="csr">CSR Activity</option>
+                                    <option value="technical">Seminar/Technical training</option>
+                                    <option value="hackathon">Hackathon</option>
+                                    <option value="sport">Sport</option>
+                                    <option value="festival">Festival</option>
+                                    <option value="outing">Outing</option>
+                                    <option value="celebration">Celebration</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clr-form-control clr-row">
+                        <label for="name" class="clr-control-label clr-col-4">Event Name</label>
+                        <div class="clr-control-container clr-col-8">
+                            <div class="clr-input-wrapper">
+                                <input type="text" id="name" name="name" placeholder="Event name"
+                                    class="clr-input input-width" [(ngModel)]="customEvent.name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clr-form-control clr-row">
+                        <label for="venue" class="clr-control-label clr-col-4">Venue</label>
+                        <div class="clr-control-container clr-col-8">
+                            <div class="clr-input-wrapper">
+                                <input type="text" id="venue" name="venue" placeholder="Venue"
+                                    class="clr-input input-width" [(ngModel)]="customEvent.venue" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clr-form-control clr-row">
+                        <label for="start" class="clr-control-label clr-col-4">Start Date</label>
+                        <div class="clr-control-container clr-col-8">
+                            <div class="clr-input-wrapper">
+                                <input type="text" id="start" name="start" placeholder="Start date"
+                                    class="clr-input input-width" [(ngModel)]="customEvent.startDate">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clr-form-control clr-row">
+                        <label for="end" class="clr-control-label clr-col-4">End Date</label>
+                        <div class="clr-control-container clr-col-8">
+                            <div class="clr-input-wrapper">
+                                <input type="text" id="end" name="end" placeholder="End date"
+                                    class="clr-input input-width" [(ngModel)]="customEvent.endDate" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clr-form-control clr-row">
+                        <label for="textarea" class="clr-control-label clr-col-4">Description</label>
+                        <div class="clr-control-container clr-col-8">
+                            <div class="clr-textarea-wrapper">
+                                <textarea id="textarea" placeholder="Description" name="description"
+                                    [(ngModel)]="customEvent.description" class="clr-textarea textarea-dim"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary marginTop" (click)="createCustomEvent()">Create</button>
+                        <button class="btn btn-outline marginTop" (click)="eventForm=false">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </clr-modal>
 </div>
