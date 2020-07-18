@@ -195,7 +195,6 @@ export class EventsComponent implements OnInit {
       bgPosition: 'center'
     },
     event: [
-
       {
         text: 'Quaterly Outing',
         style: {
@@ -206,7 +205,6 @@ export class EventsComponent implements OnInit {
           'top': '35px',
           'text-align': 'center',
           'color': 'Red',
-          'text-shadow': '2px 2px 4px #000000',
         }
       },
 
@@ -255,7 +253,7 @@ export class EventsComponent implements OnInit {
           'top': '7px',
           'left': '15%',
           'color': 'azure',
-          'background': '#3393FF',
+          'background': 'steelblue',
           'font-family': 'Georgia, serif',
           'padding': '2px'
         }
@@ -389,47 +387,55 @@ export class EventsComponent implements OnInit {
       description: ""
     };
 
+    let options = {
+      weekday: 'long',
+      month: 'short',
+      day: 'numeric'
+    };
+    let endDate = new Date(newCustomEventObj.endDate).toLocaleDateString('en-us', options);
+    console.log('endDate', endDate);
+
     if (newCustomEventObj) {
-  
+
       let bgImageCard = "";
-      let fontColor="";
-      let venueColor="";
-      let dateColor="";
+      let fontColor = "";
+      let venueColor = "";
+      let dateColor = "";
       if (newCustomEventObj.type === "csr") {
         bgImageCard = "assets/csr-card.jpg";
-        fontColor="black";
-        venueColor="black";
-        dateColor="white";
+        fontColor = "black";
+        venueColor = "white";
+        dateColor = "black";
       } else if (newCustomEventObj.type === "technical") {
         bgImageCard = "assets/technical1-card.jpg";
-        fontColor="white";
-        venueColor="black";
-        dateColor="blue";
+        fontColor = "black";
+        venueColor = "white";
+        dateColor = "black";
       } else if (newCustomEventObj.type === "hackathon") {
-        bgImageCard = "assets/hackathon2-card.jpg";
-        fontColor="white";
-        venueColor="black";
-        dateColor="white";
+        bgImageCard = "assets/blue-card.jpg";
+        fontColor = "white";
+        venueColor = "black";
+        dateColor = "white";
       } else if (newCustomEventObj.type === "sport") {
         bgImageCard = "assets/sports-card.jpg";
-        fontColor="white";
-        venueColor="black";
-        dateColor="white";
+        fontColor = "white";
+        venueColor = "black";
+        dateColor = "white";
       } else if (newCustomEventObj.type === "festival") {
         bgImageCard = "assets/festival-card.jpg";
-        fontColor="white";
-        venueColor="black";
-        dateColor="white";
+        fontColor = "white";
+        venueColor = "black";
+        dateColor = "white";
       } else if (newCustomEventObj.type === "outing") {
         bgImageCard = "assets/outing-card.jpg";
-        fontColor="blue";
-        venueColor="black";
-        dateColor="white";
+        fontColor = "blue";
+        venueColor = "white";
+        dateColor = "black";
       } else if (newCustomEventObj.type === "celebration") {
-        bgImageCard = "assets/event.jpg";
-        fontColor="white";
-        venueColor="blue";
-        dateColor="white";
+        bgImageCard = "assets/celebration.jpg";
+        fontColor = "Black";
+        venueColor = "white";
+        dateColor = "Black";
       }
 
       console.log('Image', bgImageCard);
@@ -446,10 +452,9 @@ export class EventsComponent implements OnInit {
               'font-size': '24px',
               'font-weight': 'bolder',
               'font-family': 'Georgia, serif',
-              'margin': '5px',
-              'top': '15px',
+              'top': '20px',
               'color': fontColor,
-              'text-shadow': '2px 2px 4px black',
+              'text-shadow': '2px 2px 4px ' + venueColor,
               'text-align': 'center',
               'width': '100%'
             }
@@ -459,26 +464,24 @@ export class EventsComponent implements OnInit {
             style: {
               'font-size': '18px',
               'font-family': 'Georgia, serif',
-              'margin': '5px',
               'top': '120px',
               'color': venueColor,
               'font-weight': 'bold',
               'width': '100%',
               'text-align': 'center',
-              'text-shadow': '2px 2px 3px white'
+              'text-shadow': '2px 2px 3px ' + dateColor,
             }
           },
           {
-            text: "Last Date :-" + newCustomEventObj.endDate,
+            text: "Last Date :-" + endDate,
             style: {
               'font-size': '16px',
               'font-weight': 'bolder',
-              'margin': '5px',
               'top': '80%',
-              'color': dateColor, 
+              'color': dateColor,
               'width': '100%',
-              'text-align': 'center',            
-              'text-shadow': '2px 2px 3px black'
+              'text-align': 'center',
+              'text-shadow': '2px 2px 3px ' + venueColor
             }
           }
         ]

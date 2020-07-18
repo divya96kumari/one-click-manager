@@ -7,18 +7,21 @@
     <div class="card-div">
         <div class="card_container" *ngFor="let item of custom_events">
             <a href="..." class="card clickable">
-                <div class="card-block card-size">
+                <div class="card-block card-size clr-col">
                     <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
-                        [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>
+                        [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition">
+                    </div>
                     <div *ngFor="let detail of item.event">
                         <div class="pos-abs" [ngStyle]="detail.style">
                             {{detail.text}}
                         </div>
                     </div>
                 </div>
+
             </a>
         </div>
     </div>
+
     <h4 class="event-header">This week</h4>
     <div class="card-div">
         <div class="card_container" *ngFor="let item of events">
@@ -30,12 +33,11 @@
                     <div *ngFor="let detail of item.event">
                         <div class="pos-abs" [ngStyle]="detail.style">{{detail.text}}</div>
                     </div>
-
                 </div>
             </a>
-
         </div>
     </div>
+
     <h4 class="event-header">This month</h4>
     <div class="card-div">
         <div class="card_container" *ngFor="let item of later_events">
@@ -104,9 +106,9 @@
                     <div class="clr-form-control clr-row">
                         <label for="start" class="clr-control-label clr-col-4">Start Date</label>
                         <div class="clr-control-container clr-col-8">
-                            <div class="clr-input-wrapper">
-                                <input type="text" id="start" name="start" placeholder="Start date"
-                                    class="clr-input input-width" [(ngModel)]="customEvent.startDate">
+                            <div class="clr-date-wrapper">
+                                <input type="date" id="start" name="start" placeholder="Start date"
+                                    class="clr-date date-input-display" [(ngModel)]="customEvent.startDate">
                             </div>
                         </div>
                     </div>
@@ -114,9 +116,9 @@
                     <div class="clr-form-control clr-row">
                         <label for="end" class="clr-control-label clr-col-4">End Date</label>
                         <div class="clr-control-container clr-col-8">
-                            <div class="clr-input-wrapper">
-                                <input type="text" id="end" name="end" placeholder="End date"
-                                    class="clr-input input-width" [(ngModel)]="customEvent.endDate" required>
+                            <div class="clr-date-wrapper">
+                                <input type="date" id="end" name="end" placeholder="little-endian"
+                                    class="clr-date date-input-display" [(ngModel)]="customEvent.endDate" required>
                             </div>
                         </div>
                     </div>

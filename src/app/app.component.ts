@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'one-click-manager';
+  selectedTab = '';
   username = '';
   form: any = {
     email: "",
     username: "",
     password: ""
   };
+
+  DashboardActive=false;
+  FaqActive=false;
 
   currentChoice = 'dashboard';
   openSignupModal=false;
@@ -45,6 +49,17 @@ export class AppComponent {
       return true;
     else
       return false;
+  }
+
+  onclickEvent(event){
+    console.log('event', event);
+    if(event === 'Dashboard'){
+      this.DashboardActive =true;
+      this.FaqActive =false;
+    }else if(event === 'FAQ'){
+      this.DashboardActive =false;
+      this.FaqActive =true;
+    }
   }
 
 }

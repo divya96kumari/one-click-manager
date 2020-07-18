@@ -15,7 +15,7 @@
 }
 
 .card_container {
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .card-size {
@@ -89,4 +89,15 @@
   margin-bottom: 32px;
   margin-top: 15px;
   text-align: center;
+}
+
+.date-input-display{
+    color: gray;
+    background: 0;
+    border: 0;
+    border-bottom: #999 1px solid;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
 }

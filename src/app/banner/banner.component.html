@@ -1,24 +1,19 @@
-<div class="main-div">
-    <div class="bg-div" style="background-image: url(assets/photography.jpg);">
-        <!-- <div class="banner-container"> -->
+<div [@filterAnimation]="banner_event.length" class="main-div">
+    <div *ngFor='let i of countArray'>
+        <div *ngFor="let event of banner_event">
+            <div class="bg-div" [style.backgroundImage]="'url('+event.bg.bgImage+')'">
+                <div [ngStyle]="event.event_name.style">
+                    {{event.event_name.title}}
+                </div>
+                <p [ngStyle]="event.event_description.style">
+                    {{event.event_description.title}}
+                </p>
 
-        <div class="event-display">
-            Nature photography contest
+                <div [ngStyle]="event.event_details.style">{{event.event_details.title}}</div>
+                <div class="timer-display">
+                    <timer [eventDate]="event.event_date"></timer>
+                </div>
+            </div>
         </div>
-        <p class="des-display">
-            Event template is a modernistic tool for almost any product based website. Of course, it aims
-            towards
-            events of all kinds. It is a flat Bootstrap template, fully responsive, which was designed using
-            HTML5
-            and CSS3. If you need a contemporary template with great features to promote your application, However, you
-            can still perform tweaks and improvements until you fully fine-tune The Conference to follow your needs
-            precisely.
-        </p>
-
-        <div class="date-display">Upload your photos till 15th july</div>
-        <div class="timer-display">
-            <timer [value]="1000000" (onComplete)="timerCompleted($event)"></timer>
-        </div>
-        <!-- </div> -->
     </div>
 </div>

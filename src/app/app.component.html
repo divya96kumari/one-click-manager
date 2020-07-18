@@ -23,7 +23,48 @@
         </div>
     </header>
 
-    <nav class="subnav">
+    <div class="add-margin">
+        <clr-tabs>
+            <clr-tab class="mgn">
+                <button clrTabLink class="design-nav mgn">About</button>
+                    <clr-tab-content>
+                        <app-about (clicked)='onclickEvent($event)'></app-about>
+                    </clr-tab-content>
+            </clr-tab>
+            <clr-tab>
+                <button clrTabLink class="design-nav mgn">Dashboard</button>
+                <ng-template [(clrIfActive)]="DashboardActive">
+                    <clr-tab-content>
+                        <app-banner></app-banner>
+                        <app-events></app-events>
+                    </clr-tab-content>
+                </ng-template>
+            </clr-tab>
+            <clr-tab>
+                <button clrTabLink class="design-nav  mgn">Upcoming Events</button>
+                <clr-tab-content>
+                    <app-upcoming-events></app-upcoming-events>
+                </clr-tab-content>
+            </clr-tab>
+            <clr-tab>
+                <button clrTabLink class="design-nav  mgn">Feedback</button>
+                <clr-tab-content>
+                    <app-contact-us></app-contact-us>
+                </clr-tab-content>
+            </clr-tab>
+            <clr-tab>
+                <button clrTabLink class="design-nav  mgn">FAQ's</button>
+                <ng-template [(clrIfActive)]="FaqActive">
+                    <clr-tab-content>
+                        <app-faq></app-faq>
+                    </clr-tab-content>
+                </ng-template>
+            </clr-tab>
+        </clr-tabs>
+    </div>
+
+
+    <!-- <nav class="subnav">
         <ul class="nav">
             <li class="nav-item">
                 <a class="nav-link" href="#about" (click)="setActive('about')"
@@ -32,6 +73,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#dashboard" (click)="setActive('dashboard')"
                     [ngClass]="{'active': getActive('dashboard')}">Dashboard</a>
+                    
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#upcomingEvents" (click)="setActive('upEvents')"
@@ -42,7 +84,7 @@
                     [ngClass]="{'active': getActive('contactUs')}">Contact us</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 
 
     <clr-modal [clrModalOpen]="openLoginModal" [clrModalClosable]="false" [clrModalSize]="'lg'">
@@ -107,7 +149,4 @@
             </div>
         </div>
     </clr-modal>
-
-    <app-banner></app-banner>
-    <router-outlet></router-outlet>
 </div>

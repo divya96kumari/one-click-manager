@@ -7,7 +7,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: EventsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'upcomingEvents', component: UpcomingEventsComponent },

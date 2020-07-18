@@ -1,1 +1,137 @@
-<p>contact-us works!</p>
+<div class="main-div">
+    <div class="img-div" style="background-image: url(assets/about.jpg);">
+
+    </div>
+    <div class="about-div">
+        <div class="content">
+            <h2 class='mgn-title'> <b>Feedback</b> </h2>
+            <form clrForm class="form-dim">
+
+                <div class="clr-form-control clr-row">
+                    <label for="basic" class="clr-control-label clr-col-4">Event Type</label>
+                    <div class="clr-control-container clr-col-8">
+                        <div class="clr-select-wrapper input-width">
+                            <select class="clr-select input-width" name="type" [(ngModel)]="customEvent.type" required>
+                                <option value="">Select</option>
+                                <option value="csr">CSR Activity</option>
+                                <option value="technical">Seminar/Technical training</option>
+                                <option value="hackathon">Hackathon</option>
+                                <option value="sport">Sport</option>
+                                <option value="festival">Festival</option>
+                                <option value="outing">Outing</option>
+                                <option value="celebration">Celebration</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr-form-control clr-row">
+                    <label for="name" class="clr-control-label clr-col-4">Event Name</label>
+                    <div class="clr-control-container clr-col-8">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="name" name="name" placeholder="Event name"
+                                class="clr-input input-width" [(ngModel)]="customEvent.name" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr-form-control clr-row">
+                    <label for="textarea" class="clr-control-label clr-col-4">Your Review</label>
+                    <div class="clr-control-container clr-col-8">
+                        <div class="clr-textarea-wrapper">
+                            <textarea id="textarea" placeholder="Tips and Guidelines" name="description"
+                                [(ngModel)]="customEvent.review" class="clr-textarea textarea-dim"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr-form-control clr-row">
+                    <label for="basic" class="clr-control-label clr-col-4">Overall Experience</label>
+                    <div class="clr-control-container clr-col-8 clr-control-inline">
+                        <div class="clr-radio-wrapper input-width">
+                            <input type="radio" id="radio1" name="options" required value="option1"
+                                (ngModel)="customEvent.overallExp" />
+                            <label class="mgn-right" for="radio1">Excellent</label>
+                            <input type="radio" id="radio2" name="options" required value="option2"
+                                (ngModel)="customEvent.overallExp" />
+                            <label class="mgn-right" for="radio2">Good</label>
+                            <input type="radio" id="radio3" name="options" required value="option3"
+                                (ngModel)="customEvent.overallExp" />
+                            <label class="mgn-right" for="radio3">Fair</label>
+                            <input type="radio" id="radio4" name="options" required value="option4"
+                                (ngModel)="customEvent.overallExp" />
+                            <label class="mgn-right" for="radio4">Poor</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr-form-control clr-row">
+                    <label for="basic" class="clr-control-label clr-col-4">Our Support</label>
+                    <div class="clr-control-container clr-col-8 clr-control-inline">
+                        <div class="clr-radio-wrapper input-width">
+                            <input type="radio" id="radio1" name="options" required value="option1"
+                                (ngModel)="customEvent.support" />
+                            <label class="mgn-right" for="radio1">Excellent</label>
+                            <input type="radio" id="radio2" name="options" required value="option2"
+                                (ngModel)="customEvent.support" />
+                            <label class="mgn-right" for="radio2">Good</label>
+                            <input type="radio" id="radio3" name="options" required value="option3"
+                                (ngModel)="customEvent.support" />
+                            <label class="mgn-right" for="radio3">Fair</label>
+                            <input type="radio" id="radio4" name="options" required value="option4"
+                                (ngModel)="customEvent.support" />
+                            <label class="mgn-right" for="radio4">Poor</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr-form-control clr-row">
+                    <label for="basic" class="clr-control-label clr-col-4">Timely Response</label>
+                    <div class="clr-control-container clr-col-8 clr-control-inline">
+                        <div class="clr-radio-wrapper input-width">
+                            <input type="radio" id="radio1" name="options" required value="option1"
+                                (ngModel)="customEvent.timelyRes" />
+                            <label class="mgn-right" for="radio1">Excellent</label>
+                            <input type="radio" id="radio2" name="options" required value="option2"
+                                (ngModel)="customEvent.timelyRes" />
+                            <label class="mgn-right" for="radio2">Good</label>
+                            <input type="radio" id="radio3" name="options" required value="option3"
+                                (ngModel)="customEvent.timelyRes" />
+                            <label class="mgn-right" for="radio3">Fair</label>
+                            <input type="radio" id="radio4" name="options" required value="option4"
+                                (ngModel)="customEvent.timelyRes" />
+                            <label class="mgn-right" for="radio4">Poor</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr-form-control clr-row">
+                    <label for="textarea" class="clr-control-label clr-col-4">Is there anything you would like to tell
+                        us?</label>
+                    <div class="clr-control-container clr-col-8">
+                        <div class="clr-textarea-wrapper">
+                            <textarea id="textarea" placeholder="Type here" name="description"
+                                [(ngModel)]="customEvent.description" class="clr-textarea textarea-dim"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="clr-form-control clr-row">
+                    <label for="textarea" class="clr-control-label clr-col-4">Want to rate with us for customer
+                        services?
+                    </label>
+                    <div class="clr-control-container clr-col-8">
+                        <div class="clr-input-wrapper">
+                            <bar-rating [(rate)]="cssRate" [max]="5"></bar-rating>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary mgn-top" (click)="createCustomEvent()">Submit Feedback</button>
+
+            </form>
+        </div>
+    </div>
+</div>

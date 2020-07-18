@@ -9,6 +9,15 @@ export class ContactUsComponent implements OnInit {
 
   constructor() { }
 
+  customEvent: any = {
+    type: "",
+    name: "",
+    overallExp: "",
+    timelyRes:"",
+    support: "",
+    description: "",
+    review: ""
+  }
   ngOnInit() {
   }
 

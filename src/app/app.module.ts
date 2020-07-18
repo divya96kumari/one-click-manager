@@ -10,8 +10,10 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
 import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
-import {TimerComponent} from './timer/timer.component';
-import { BannerComponent } from './banner/banner.component'
+import { TimerComponent } from './timer/timer.component';
+import { BannerComponent } from './banner/banner.component';
+import { FaqComponent } from './faq/faq.component';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { BannerComponent } from './banner/banner.component'
     AboutComponent,
     ContactUsComponent,
     TimerComponent,
-    BannerComponent
+    BannerComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { BannerComponent } from './banner/banner.component'
     ClarityModule,
     FormsModule,
     CountdownTimerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
