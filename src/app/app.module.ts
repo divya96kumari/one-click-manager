@@ -14,6 +14,7 @@ import { TimerComponent } from './timer/timer.component';
 import { BannerComponent } from './banner/banner.component';
 import { FaqComponent } from './faq/faq.component';
 import { BarRatingModule } from 'ngx-bar-rating';
+import { EventOverviewComponent } from './event-overview/event-overview.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BarRatingModule } from 'ngx-bar-rating';
     ContactUsComponent,
     TimerComponent,
     BannerComponent,
-    FaqComponent
+    FaqComponent,
+    EventOverviewComponent
   ],
   imports: [
     BrowserModule,

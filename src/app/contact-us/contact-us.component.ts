@@ -9,16 +9,26 @@ export class ContactUsComponent implements OnInit {
 
   constructor() { }
 
-  customEvent: any = {
+  feedback: any = {
     type: "",
     name: "",
     overallExp: "",
     timelyRes:"",
     support: "",
     description: "",
-    review: ""
+    review: "",
+    rate:""
   }
+
+  feedbackSubmitted = false;
   ngOnInit() {
+  }
+
+  submitFeedback(){
+    this.feedbackSubmitted = true;
+  }
+  feedbackAgain(){
+    this.feedbackSubmitted = false;
   }
 
 }

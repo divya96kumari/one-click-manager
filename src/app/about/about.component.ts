@@ -7,6 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
  @Output() clicked = new EventEmitter<string>();
+ @Output() logged = new EventEmitter<boolean>();
+
   constructor() { }
 
   dashboardClicked = false;
@@ -16,10 +18,12 @@ export class AboutComponent implements OnInit {
   }
 
   onDashboard() {
+    this.logged.emit(true)
     this.clicked.emit('Dashboard')
   }
 
   onFaq() {
+    this.logged.emit(true)
     this.clicked.emit('FAQ')
   }
 

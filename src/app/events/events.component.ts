@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-events',
@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-
+ 
   events = [{
-    id: 'event-1',
+    id: '1',
     bg: {
       bgImage: 'assets/csr-card.jpg',
       bgSize: '100% 100%',
@@ -67,7 +67,7 @@ export class EventsComponent implements OnInit {
       }
     ]
   }, {
-    id: 'event-2',
+    id: '2',
     bg: {
       bgImage: 'assets/blue-card.jpg',
       bgSize: '100% 100%',

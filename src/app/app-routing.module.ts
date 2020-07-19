@@ -4,14 +4,18 @@ import { EventsComponent } from './events/events.component';
 import { AboutComponent } from './about/about.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { EventOverviewComponent } from './event-overview/event-overview.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'faq', component: FaqComponent },
+  { path: 'dashboard/events/:id', component: EventOverviewComponent },
   { path: 'dashboard', component: EventsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'upcomingEvents', component: UpcomingEventsComponent },
-  { path: 'contactUs', component: ContactUsComponent },
+  { path: 'feedback', component: ContactUsComponent },
 ];
 
 @NgModule({

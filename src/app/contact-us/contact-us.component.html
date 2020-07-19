@@ -2,7 +2,7 @@
     <div class="img-div" style="background-image: url(assets/about.jpg);">
 
     </div>
-    <div class="about-div">
+    <div class="about-div" *ngIf="!feedbackSubmitted">
         <div class="content">
             <h2 class='mgn-title'> <b>Feedback</b> </h2>
             <form clrForm class="form-dim">
@@ -11,7 +11,7 @@
                     <label for="basic" class="clr-control-label clr-col-4">Event Type</label>
                     <div class="clr-control-container clr-col-8">
                         <div class="clr-select-wrapper input-width">
-                            <select class="clr-select input-width" name="type" [(ngModel)]="customEvent.type" required>
+                            <select class="clr-select input-width" name="type" [(ngModel)]="feedback.type" required>
                                 <option value="">Select</option>
                                 <option value="csr">CSR Activity</option>
                                 <option value="technical">Seminar/Technical training</option>
@@ -30,7 +30,7 @@
                     <div class="clr-control-container clr-col-8">
                         <div class="clr-input-wrapper">
                             <input type="text" id="name" name="name" placeholder="Event name"
-                                class="clr-input input-width" [(ngModel)]="customEvent.name" required>
+                                class="clr-input input-width" [(ngModel)]="feedback.name" required>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <div class="clr-control-container clr-col-8">
                         <div class="clr-textarea-wrapper">
                             <textarea id="textarea" placeholder="Tips and Guidelines" name="description"
-                                [(ngModel)]="customEvent.review" class="clr-textarea textarea-dim"></textarea>
+                                [(ngModel)]="feedback.review" class="clr-textarea textarea-dim"></textarea>
                         </div>
                     </div>
                 </div>
@@ -50,16 +50,16 @@
                     <div class="clr-control-container clr-col-8 clr-control-inline">
                         <div class="clr-radio-wrapper input-width">
                             <input type="radio" id="radio1" name="options" required value="option1"
-                                (ngModel)="customEvent.overallExp" />
+                                (ngModel)="feedback.overallExp" />
                             <label class="mgn-right" for="radio1">Excellent</label>
                             <input type="radio" id="radio2" name="options" required value="option2"
-                                (ngModel)="customEvent.overallExp" />
+                                (ngModel)="feedback.overallExp" />
                             <label class="mgn-right" for="radio2">Good</label>
                             <input type="radio" id="radio3" name="options" required value="option3"
-                                (ngModel)="customEvent.overallExp" />
+                                (ngModel)="feedback.overallExp" />
                             <label class="mgn-right" for="radio3">Fair</label>
                             <input type="radio" id="radio4" name="options" required value="option4"
-                                (ngModel)="customEvent.overallExp" />
+                                (ngModel)="feedback.overallExp" />
                             <label class="mgn-right" for="radio4">Poor</label>
                         </div>
                     </div>
@@ -70,16 +70,16 @@
                     <div class="clr-control-container clr-col-8 clr-control-inline">
                         <div class="clr-radio-wrapper input-width">
                             <input type="radio" id="radio1" name="options" required value="option1"
-                                (ngModel)="customEvent.support" />
+                                (ngModel)="feedback.support" />
                             <label class="mgn-right" for="radio1">Excellent</label>
                             <input type="radio" id="radio2" name="options" required value="option2"
-                                (ngModel)="customEvent.support" />
+                                (ngModel)="feedback.support" />
                             <label class="mgn-right" for="radio2">Good</label>
                             <input type="radio" id="radio3" name="options" required value="option3"
-                                (ngModel)="customEvent.support" />
+                                (ngModel)="feedback.support" />
                             <label class="mgn-right" for="radio3">Fair</label>
                             <input type="radio" id="radio4" name="options" required value="option4"
-                                (ngModel)="customEvent.support" />
+                                (ngModel)="feedback.support" />
                             <label class="mgn-right" for="radio4">Poor</label>
                         </div>
                     </div>
@@ -90,16 +90,16 @@
                     <div class="clr-control-container clr-col-8 clr-control-inline">
                         <div class="clr-radio-wrapper input-width">
                             <input type="radio" id="radio1" name="options" required value="option1"
-                                (ngModel)="customEvent.timelyRes" />
+                                (ngModel)="feedback.timelyRes" />
                             <label class="mgn-right" for="radio1">Excellent</label>
                             <input type="radio" id="radio2" name="options" required value="option2"
-                                (ngModel)="customEvent.timelyRes" />
+                                (ngModel)="feedback.timelyRes" />
                             <label class="mgn-right" for="radio2">Good</label>
                             <input type="radio" id="radio3" name="options" required value="option3"
-                                (ngModel)="customEvent.timelyRes" />
+                                (ngModel)="feedback.timelyRes" />
                             <label class="mgn-right" for="radio3">Fair</label>
                             <input type="radio" id="radio4" name="options" required value="option4"
-                                (ngModel)="customEvent.timelyRes" />
+                                (ngModel)="feedback.timelyRes" />
                             <label class="mgn-right" for="radio4">Poor</label>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                     <div class="clr-control-container clr-col-8">
                         <div class="clr-textarea-wrapper">
                             <textarea id="textarea" placeholder="Type here" name="description"
-                                [(ngModel)]="customEvent.description" class="clr-textarea textarea-dim"></textarea>
+                                [(ngModel)]="feedback.description" class="clr-textarea textarea-dim"></textarea>
                         </div>
                     </div>
                 </div>
@@ -124,14 +124,23 @@
                     </label>
                     <div class="clr-control-container clr-col-8">
                         <div class="clr-input-wrapper">
-                            <bar-rating [(rate)]="cssRate" [max]="5"></bar-rating>
+                            <bar-rating [(rate)]="feedback.rate" [max]="5"></bar-rating>
                         </div>
                     </div>
                 </div>
 
-                <button class="btn btn-primary mgn-top" (click)="createCustomEvent()">Submit Feedback</button>
+                <button class="btn btn-primary mgn-top" (click)="submitFeedback()">Submit Feedback</button>
 
             </form>
         </div>
+    </div>
+
+    <div class='submit' *ngIf="feedbackSubmitted">
+        <h1 class="fbtitle">Thank you! </h1>
+        <p class="fbtext">We appreciate that you’ve taken the time to write us. We’ll get back to you very soon.</p>
+        <div class="fbicon">
+            <clr-icon size="100" shape="check-circle" class="is-solid"></clr-icon>
+        </div>
+        <div class="fbagain" (click)="feedbackAgain()">Go back</div>
     </div>
 </div>

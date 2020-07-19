@@ -23,12 +23,12 @@
         </div>
     </header>
 
-    <div class="add-margin">
+    <!-- <div class="add-margin">
         <clr-tabs>
             <clr-tab class="mgn">
                 <button clrTabLink class="design-nav mgn">About</button>
                     <clr-tab-content>
-                        <app-about (clicked)='onclickEvent($event)'></app-about>
+                        <app-about (clicked)='onclickEvent($event)' (logged)="loginRequired($event)"></app-about>
                     </clr-tab-content>
             </clr-tab>
             <clr-tab>
@@ -61,10 +61,10 @@
                 </ng-template>
             </clr-tab>
         </clr-tabs>
-    </div>
+    </div> -->
 
 
-    <!-- <nav class="subnav">
+    <nav class="subnav">
         <ul class="nav">
             <li class="nav-item">
                 <a class="nav-link" href="#about" (click)="setActive('about')"
@@ -75,19 +75,24 @@
                     [ngClass]="{'active': getActive('dashboard')}">Dashboard</a>
                     
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#upcomingEvents" (click)="setActive('upEvents')"
                     [ngClass]="{'active': getActive('upEvents')}">Upcoming events</a>
-            </li>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="#contactUs" (click)="setActive('contactUs')"
-                    [ngClass]="{'active': getActive('contactUs')}">Contact us</a>
+                <a class="nav-link" href="#feedback" (click)="setActive('contactUs')"
+                    [ngClass]="{'active': getActive('contactUs')}">Feedback</a>
             </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#faq" (click)="setActive('FAQ')"
+                    [ngClass]="{'active': getActive('FAQ')}">FAQ's</a>
+            </li> -->
         </ul>
-    </nav> -->
+    </nav>
+    <router-outlet></router-outlet>
 
 
-    <clr-modal [clrModalOpen]="openLoginModal" [clrModalClosable]="false" [clrModalSize]="'lg'">
+    <clr-modal [clrModalOpen]="openLoginModal && fromAbout" [clrModalClosable]="false" [clrModalSize]="'lg'">
         <div class="modal-body">
             <div class="login-wrapper" style="background-image: url(assets/event.jpg); background-size: 60%;">
                 <form class="login" style="justify-content: unset; min-height: 0em;">

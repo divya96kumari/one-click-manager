@@ -1,0 +1,132 @@
+<div class="main-div">
+    <div class="bg-pos" [style.backgroundImage]="'url('+item.bg.bgImage+')'" [style.backgroundSize]="item.bg.bgSize"
+        [style.backgroundPosition]="item.bg.bgPosition"></div>
+    <div class="title">
+        <p [ngStyle]="item.title.style">{{item.title.text}}</p>
+    </div>
+    <div class="clr-row pos" *ngIf="item.desc">
+        <div class="clr-col-7" *ngIf="item.desc">
+            <h3 *ngIf="item.desc.desc1" [ngStyle]="item.desc.desc1.style">{{item.desc.desc1.text}}</h3>
+            <h4 *ngIf="item.desc.desc2">{{item.desc.desc2.text}}</h4>
+            <div *ngIf="item.desc.desc2.d1">{{item.desc.desc2.d1}}</div>
+            <div *ngIf="item.desc.desc2.d2">{{item.desc.desc2.d2}}</div>
+            <div *ngIf="item.desc.desc2.d3">{{item.desc.desc2.d3}}</div>
+
+            <h4 *ngIf="item.desc.desc3">{{item.desc.desc3.text}}</h4>
+            
+
+            <h4 *ngIf="item.desc.desc4" [ngStyle]="item.desc.desc4.style">{{item.desc.desc4.text}}</h4>
+            <h4 *ngIf="item.desc.desc5">{{item.desc.desc5.text}}</h4>
+            <br>
+            <br>
+            <h3 (click)="openFaq = !openFaq" *ngIf="item.faq" style="color: Blue">
+                <clr-icon size="24" shape="angle right" *ngIf="!openFaq"></clr-icon>
+                <clr-icon size="24" shape="angle down" *ngIf="openFaq"></clr-icon>
+                <span style="font-weight: bolder;"> FAQ's</span>
+            </h3>
+
+            <div *ngIf="openFaq">
+
+                <div class="faq-form-dis">
+                    <div *ngFor="let faqItem of item.faq">
+                        <div style="margin-top: 10px;"><b>{{faqItem.ques}}</b></div>
+                        <div style="margin-left: 10px;"><b>{{faqItem.ans}}</b></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 (click)="openRegister = !openRegister" style="color: Green">
+                <clr-icon size="24" shape="angle right" *ngIf="!openRegister"></clr-icon>
+                <clr-icon size="24" shape="angle down" *ngIf="openRegister"></clr-icon>
+                <span style="font-weight: bolder;"> Register Now</span>
+            </h3>
+
+            <div *ngIf="openRegister">
+                <div class="reg-form-dis">
+                    <form clrForm class="form-dim">
+                        <div class="clr-form-control clr-row">
+                            <label for="name" class="clr-control-label clr-col-4">Name</label>
+                            <div class="clr-control-container clr-col-8">
+                                <div class="clr-input-wrapper">
+                                    <input type="text" id="name" name="name" placeholder="Name"
+                                        class="clr-input input-width" [(ngModel)]="register.name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clr-form-control clr-row">
+                            <label for="textarea" class="clr-control-label clr-col-4">Contribution</label>
+                            <div class="clr-control-container clr-col-8">
+                                <div class="clr-textarea-wrapper">
+                                    <textarea id="textarea" placeholder="Description" name="description"
+                                        [(ngModel)]="register.desc" class="clr-textarea textarea-dim"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline marginTop" (click)="success=true">Submit</button>
+                        <div *ngIf="success" style="color: green;">
+                            <clr-icon shape="check-circle"></clr-icon>
+                            <span>Submitted Successfully.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <h3 (click)="openQuery = !openQuery" style="color: Red">
+                <clr-icon size="24" shape="angle right"></clr-icon>
+                <span style="font-weight: bolder;"> Submit Query</span>
+            </h3>
+
+
+            <div *ngIf="openQuery">
+                <div class="query-form-dis">
+                    <form clrForm class="form-dim">
+                        <div class="clr-form-control clr-row">
+                            <label for="name" class="clr-control-label clr-col-4">Name</label>
+                            <div class="clr-control-container clr-col-8">
+                                <div class="clr-input-wrapper">
+                                    <input type="text" id="name" name="name" placeholder="Name"
+                                        class="clr-input input-width" [(ngModel)]="register.name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clr-form-control clr-row">
+                            <label for="textarea" class="clr-control-label clr-col-4">Is there anything you would like
+                                to tell
+                                us?</label>
+                            <div class="clr-control-container clr-col-8">
+                                <div class="clr-textarea-wrapper">
+                                    <textarea id="textarea" placeholder="Description" name="description"
+                                        [(ngModel)]="register.desc" class="clr-textarea textarea-dim"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline marginTop" (click)="QuerySuccess=true">Submit</button>
+                        <div *ngIf="QuerySuccess" style="color: green;">
+                            <clr-icon shape="check-circle"></clr-icon>
+                            <span>Query Submitted Successfully.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="clr-col-5" *ngIf="item.image">
+            <div class="clr-row" *ngIf="item.image.image1">
+                <div class="img-pos" [style.backgroundImage]="'url('+item.image.image1.bgImage+')'"
+                    [style.backgroundSize]="item.image.image1.bgSize"></div>
+            </div>
+            <div class="clr-row" *ngIf="item.image.image2">
+                <div class="img-pos" [style.backgroundImage]="'url('+item.image.image2.bgImage+')'"
+                    [style.backgroundSize]="item.image.image2.bgSize"></div>
+            </div>
+            <div class="clr-row" *ngIf="item.image.image3">
+                <div class="img-pos" [style.backgroundImage]="'url('+item.image.image3.bgImage+')'"
+                    [style.backgroundSize]="item.image.image3.bgSize"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,6 +21,7 @@ export class AppComponent {
   currentChoice = 'dashboard';
   openSignupModal=false;
   openLoginModal = false;
+  fromAbout = false;
 
   onLogin() {
     this.username = this.form.username;
@@ -59,6 +60,13 @@ export class AppComponent {
     }else if(event === 'FAQ'){
       this.DashboardActive =false;
       this.FaqActive =true;
+    }
+  }
+
+  loginRequired(event){
+    if(event === true && this.fromAbout === false){
+      this.fromAbout = true;
+      this.openLoginModal=true;
     }
   }
 
