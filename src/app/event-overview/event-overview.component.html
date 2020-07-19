@@ -4,8 +4,13 @@
     <div class="title">
         <p [ngStyle]="item.title.style">{{item.title.text}}</p>
     </div>
+   
     <div class="clr-row pos" *ngIf="item.desc">
         <div class="clr-col-7" *ngIf="item.desc">
+            <div class="faq-form-dis" *ngIf="item.htmlCode">
+                <div [innerHtml]= "item.htmlCode"></div>
+        
+            </div>
             <h3 *ngIf="item.desc.desc1" [ngStyle]="item.desc.desc1.style">{{item.desc.desc1.text}}</h3>
             <h4 *ngIf="item.desc.desc2">{{item.desc.desc2.text}}</h4>
             <div *ngIf="item.desc.desc2.d1">{{item.desc.desc2.d1}}</div>
