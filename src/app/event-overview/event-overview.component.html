@@ -1,27 +1,17 @@
-<div class="main-div">
+<div class="main-div" *ngIf="!activeTemplate">
     <div class="bg-pos" [style.backgroundImage]="'url('+item.bg.bgImage+')'" [style.backgroundSize]="item.bg.bgSize"
         [style.backgroundPosition]="item.bg.bgPosition"></div>
     <div class="title">
         <p [ngStyle]="item.title.style">{{item.title.text}}</p>
     </div>
    
-    <div class="clr-row pos" *ngIf="item.desc">
-        <div class="clr-col-7" *ngIf="item.desc">
-            <div class="faq-form-dis" *ngIf="item.htmlCode">
-                <div [innerHtml]= "item.htmlCode"></div>
-        
+    <div class="clr-row pos" *ngIf="item.htmlCode">
+        <div class="clr-col-7" *ngIf="item.htmlCode">
+            <br>
+            <br>
+            <div *ngIf="item.htmlCode">
+                <div [innerHtml]= "item.htmlCode | safeHtml"></div>
             </div>
-            <h3 *ngIf="item.desc.desc1" [ngStyle]="item.desc.desc1.style">{{item.desc.desc1.text}}</h3>
-            <h4 *ngIf="item.desc.desc2">{{item.desc.desc2.text}}</h4>
-            <div *ngIf="item.desc.desc2.d1">{{item.desc.desc2.d1}}</div>
-            <div *ngIf="item.desc.desc2.d2">{{item.desc.desc2.d2}}</div>
-            <div *ngIf="item.desc.desc2.d3">{{item.desc.desc2.d3}}</div>
-
-            <h4 *ngIf="item.desc.desc3">{{item.desc.desc3.text}}</h4>
-            
-
-            <h4 *ngIf="item.desc.desc4" [ngStyle]="item.desc.desc4.style">{{item.desc.desc4.text}}</h4>
-            <h4 *ngIf="item.desc.desc5">{{item.desc.desc5.text}}</h4>
             <br>
             <br>
             <h3 (click)="openFaq = !openFaq" *ngIf="item.faq" style="color: Blue">
@@ -134,4 +124,9 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="activeTemplate" style="margin-left: 10px;">
+    <h2 style="color: red;">We will share the details soon!</h2>
+    <a href="#dashboard" style="margin-top: 30px; font-size: 16px;"> Go back to Dashboard</a>
 </div>

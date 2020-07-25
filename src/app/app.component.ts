@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'one-click-manager';
   selectedTab = '';
   username = '';
@@ -22,6 +22,12 @@ export class AppComponent {
   openSignupModal=false;
   openLoginModal = false;
   fromAbout = false;
+
+  ngOnInit() {
+    setTimeout(()=>{
+      this.loginRequired(true);
+    }, 10000);
+  }
 
   onLogin() {
     this.username = this.form.username;
@@ -64,8 +70,8 @@ export class AppComponent {
   }
 
   loginRequired(event){
-    if(event === true && this.fromAbout === false){
-      this.fromAbout = true;
+    console.log('eevnt', event);
+    if(event === true){
       this.openLoginModal=true;
     }
   }

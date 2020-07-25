@@ -82,7 +82,7 @@ export class EventsComponent implements OnInit {
           'font-weight': 'bold',
           'top': '7px',
           'left': '15%',
-          'color': 'Blue',
+          'color': 'steelblue',
           'text-shadow': '2px 2px 4px white',
           'background': 'azure',
           'padding': '2px',
@@ -129,16 +129,17 @@ export class EventsComponent implements OnInit {
     ]
   }];
 
-  later_events = [{
-    id: 'le-1',
+  later_events = [
+    {
+    id: '3',
     bg: {
-      bgImage: 'assets/green-card.jpg',
+      bgImage: 'assets/plant-card.jpg',
       bgSize: '100% 100%',
       bgPosition: 'center'
     },
     event: [
       {
-        text: 'Nature Photography Contest',
+        text: 'Dell Plantation Drive',
         style: {
           'font-size': '24px',
           'font-weight': 'bolder',
@@ -151,13 +152,14 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: 'Register Now',
+        text: 'Mysore Road @Bidadi',
         style: {
           'font-size': '18px',
           'font-family': 'Georgia, serif',
           'margin': '5px',
-          'top': '120px',
-          'left': '59px',
+          'top': '110px',
+          'text-align': 'center',
+          'width': '100%',
           'color': 'black',
           'font-weight': 'bold',
           'text-shadow': '2px 2px 3px white'
@@ -176,7 +178,7 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: '30th June',
+        text: '14th Aug',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
@@ -187,35 +189,39 @@ export class EventsComponent implements OnInit {
         }
       }
     ]
-  }, {
-    id: 'le-2',
+  },
+  {
+    id: '4',
     bg: {
-      bgImage: 'assets/outing-card.jpg',
+      bgImage: 'assets/diya.jpg',
       bgSize: '100% 100%',
       bgPosition: 'center'
     },
     event: [
       {
-        text: 'Quaterly Outing',
+        text: 'Dell- Diya Painting',
         style: {
           'font-size': '24px',
-          'font-weight': 'bolder',
-          'margin': '5px',
-          'left': '10%',
-          'top': '35px',
+          'margin': '2px',
+          'font-weight': 'bold',
+          'top': '20px',
           'text-align': 'center',
-          'color': 'Red',
+          'width': '100%',
+          'color': 'white',
+          'font-family': 'Georgia, serif',
+          'padding': '2px',          
+          'text-shadow': '2px 2px 4px black',
         }
       },
 
       {
-        text: 'Venue - Palm Meadows Resort ',
+        text: 'Location - Srinagar Conference Room @11 am',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
           'margin': '5px',
           'top': '120px',
-          'left': '5px',
+          'width': '100%',
           'color': 'black',
           'text-align': 'center',
           'text-shadow': '2px 2px 4px white',
@@ -223,21 +229,23 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: 'Date - 10th July',
+        text: 'Date: 9th and 10th September',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
           'margin': '5px',
           'top': '80%',
-          'color': 'blue',
-          'left': '26%',
-          'text-align': 'center'
+          'color': 'white',
+          'text-align': 'center',
+          
+          'width': '100%',
         }
       }
-    ]
+    ],
+
   },
   {
-    id: 'le-3',
+    id: '5',
     bg: {
       bgImage: 'assets/technical1-card.jpg',
       bgSize: '100% 100%',
@@ -288,22 +296,22 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: 'Date - 10th July',
+        text: 'Coming soon!!!',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
           'margin': '5px',
           'top': '80%',
-          'color': 'blue',
-          'left': '26%',
-          'text-align': 'center'
+          'color': 'red',
+          'text-align': 'center',
+          'width': '100%'
         }
       }
     ],
 
   },
   {
-    id: 'le-4',
+    id: '6',
     bg: {
       bgImage: 'assets/sports-card.jpg',
       bgSize: '100% 100%',
@@ -340,15 +348,15 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: 'Nomination open!!!',
+        text: 'Coming soon!!!',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
           'margin': '5px',
           'top': '80%',
           'color': 'red',
-          'left': '20%',
-          'text-align': 'center'
+          'text-align': 'center',
+          'width': '100%'
         }
       }
     ]
