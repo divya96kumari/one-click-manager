@@ -147,7 +147,7 @@
                         </clr-checkbox-wrapper>
                         <button type="submit" class="btn btn-primary" style="margin: 0;" (click)="onSignup()"
                             [disabled]="!form.username || !form.password">Signup</button>
-                        <span class="signup blue_underline" (click)="openSignupModal=false; openLoginModal=true">Sign
+                        <span class="signup blue_underline" (click)="openSignupModal=false; openLoginModal=true; onSignIn()">Sign
                             in</span>
                     </div>
                 </form>

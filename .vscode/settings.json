@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/afea3756-490b-4677-83d5-17ba3627b1b5/resourceGroups/SADATAHUBAZ-TRYOUTS/providers/Microsoft.Web/sites/WIAdemo",
+    "appService.deploySubpath": "dist"
+}
