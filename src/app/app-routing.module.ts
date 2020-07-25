@@ -6,12 +6,14 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { EventOverviewComponent } from './event-overview/event-overview.component';
 import { FaqComponent } from './faq/faq.component';
+import { CustomCardOverviewComponent } from './custom-card-overview/custom-card-overview.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'faq', component: FaqComponent },
   { path: 'dashboard/events/:id', component: EventOverviewComponent },
+  { path: 'dashboard/custom-events/:id', component: CustomCardOverviewComponent },
   { path: 'dashboard', component: EventsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'upcomingEvents', component: UpcomingEventsComponent },

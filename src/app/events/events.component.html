@@ -6,8 +6,8 @@
     </div>
     <h4 class="event-header" *ngIf="custom_events[0]">Custom events</h4>
     <div class="card-div">
-        <div class="card_container" *ngFor="let item of custom_events">
-            <a href="..." class="card clickable">
+        <div class="card_container" *ngFor="let item of custom_events; let i=index">
+            <a  [routerLink]="['custom-events', i]" class="card clickable">
                 <div class="card-block card-size clr-col">
                     <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
                         [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition">

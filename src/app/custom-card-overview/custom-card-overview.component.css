@@ -1,0 +1,102 @@
+.main-div{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+.bg-pos{
+    height: 300px;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.title{
+    width: 700px;
+    height: 80px;
+    top: 262px;
+    left: 5%;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px 4px black;
+    position: absolute;
+}
+.pos{
+    position: relative;
+    margin: 3rem 1rem;
+}
+
+.title-font{
+    font-weight: bolder;
+    color: steelblue;
+    text-align: center;
+    font-size: 40px;
+    width: 100%;
+}
+
+.event-header {
+    background-color: steelblue;
+    padding: 6px;
+    border-radius: 2px;
+    color: white;
+    box-shadow: 2px 2px 4px black;
+  }
+
+.event-header {
+    background-color: steelblue;
+    padding: 6px;
+    border-radius: 2px;
+    color: white;
+    box-shadow: 2px 2px 4px black;
+  }
+
+  .query-form-dis{
+      background-color: #FABEB8;
+      width: 100%;
+  }
+
+  .reg-form-dis{
+    background-color: #EEFAB8;
+    width: 100%;
+}
+
+  .form-dim{
+    margin: 10px 40px 10px 40px;
+  }
+
+  .input-width{
+      width: 100%;
+  }
+
+  .textarea-dim{
+      width: 100%;
+      height: 200px;
+  }
+
+  .margintop{
+      margin-top: 10px;
+  }
+
+  .faq-form-dis{
+    background-color: aliceblue;
+    width: 100%;
+    padding: 30px;
+  }
+
+  .desc-dis{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px; margin:5px;
+  }
+
+  
+ .descri{
+     background-color: aliceblue;
+     border: 2px solid black;
+     border-radius: 5px;
+    padding: 0px 10px 10px 10px;
+ }

@@ -27,7 +27,7 @@ export class BannerComponent implements OnInit {
       },
       htmlCode: `<div style="padding:25px">
       <h1
-          style="color: white; font-weight: bolder; font-size: 40px; font-family: Georgia, serif; width:50%; padding: 0px 2px 2px 2px;">
+          style="color: white; font-weight: bolder; font-size: 35px; font-family: Georgia, serif; width:50%; padding: 0px 2px 2px 2px;">
           Hackathon - Women in Action</h1>
       <br>
       <br>
@@ -59,9 +59,8 @@ export class BannerComponent implements OnInit {
       },
       htmlCode: `<div style="padding:25px">
       <h1
-          style="color: green; font-weight: bolder; font-size: 40px; background-color: rgba(233, 235, 229, 0.725); width:50%; padding: 0px 2px 2px 2px;">
+          style="color: green; font-weight: bolder; font-size: 35px; background-color: rgba(233, 235, 229, 0.725); width:50%; padding: 0px 2px 2px 2px;">
           Progress Made Real - Food for Needy</h1>
-      <br>
       <br>
       <div style="background-color: rgba(253, 253, 253, 0.77); width:50%; padding: 0 5px 5px 5px;">
           <h4 style="font-weight: bolder; padding: 0px 10px 10px 10px;">Covid 19 has impacted the foot fall to
@@ -98,7 +97,7 @@ export class BannerComponent implements OnInit {
  
     htmlCode: `<div style="padding:25px;">
     <h1
-        style="color: Green; font-weight: bolder; font-family: Georgia, serif; font-size: 40px; width:50%; padding: 0px 2px 2px 2px;">
+        style="color: Green; font-weight: bolder; font-family: Georgia, serif; font-size: 35px; width:50%; padding: 0px 2px 2px 2px;">
         Dell Planataion Drive</h1>
     <br>
     <br>
@@ -127,7 +126,7 @@ export class BannerComponent implements OnInit {
     <br>
     <br>
     <h1
-        style="color: white; font-weight: bolder; font-family: Georgia, serif; font-size: 40px; width:50%; padding: 0px 10px 10px 10px;">
+        style="color: white; font-weight: bolder;font-size: 35px; font-family: Georgia, serif; font-size: 40px; width:50%; padding: 0px 10px 10px 10px;">
         Nature Photography Contest</h1>
     <br>
     <div style="color: black; width:50%; background-color: rgba(253, 253, 253, 0.37); padding: 0 5px 5px 5px;">

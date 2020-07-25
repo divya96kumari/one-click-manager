@@ -22,6 +22,11 @@ export class EventOverviewComponent implements OnInit {
     desc: ''
   }
 
+  query = {
+    name: '',
+    desc: ''
+  }
+
   success = false;
   QuerySuccess = false;
 
@@ -70,11 +75,15 @@ export class EventOverviewComponent implements OnInit {
 
       image: {
         image1: {
-          bgImage: 'assets/food-bg.jpg',
+          bgImage: 'assets/food_graph.JPG',
           bgSize: '100% 100%',
         },
         image2: {
           bgImage: 'assets/food1.jpg',
+          bgSize: '100% 100%',
+        },
+        image3: {
+          bgImage: 'assets/food-bg.jpg',
           bgSize: '100% 100%',
         },
       }
@@ -97,7 +106,7 @@ export class EventOverviewComponent implements OnInit {
           'text-align': 'center'
         }
       },
-      htmlCode: `<div style="border-radius: 5px; border: 2px solid rgb(20, 126, 147); padding: 0px 20px 20px 20px;">
+            htmlCode: `<div style="border-radius: 5px; border: 2px solid rgb(20, 126, 147); padding: 0px 20px 20px 20px;">
       <div>
           <h1 style="font-weight: bolder; font-family: Georgia, serif;
           text-shadow: 2px 2px 4px white;">Seamless Edge-Core-Cloud</h1>
@@ -152,11 +161,15 @@ export class EventOverviewComponent implements OnInit {
       ],
       image: {
         image1: {
-          bgImage: 'assets/hack1.jpg',
+          bgImage: 'assets/hackathon_graph.JPG',
           bgSize: '100% 100%',
         },
         image2: {
           bgImage: 'assets/hack2.jpg',
+          bgSize: '100% 100%',
+        },
+        image3: {
+          bgImage: 'assets/hack1.jpg',
           bgSize: '100% 100%',
         },
       }
@@ -208,11 +221,15 @@ export class EventOverviewComponent implements OnInit {
 
       image: {
         image1: {
-          bgImage: 'assets/plantdrive2.jpg',
+          bgImage: 'assets/plant_graph.JPG',
           bgSize: '100% 100%',
         },
         image2: {
           bgImage: 'assets/plantdrive3.jpg',
+          bgSize: '100% 100%',
+        },
+        image3: {
+          bgImage: 'assets/plantdrive2.jpg',
           bgSize: '100% 100%',
         },
       }
@@ -258,10 +275,14 @@ export class EventOverviewComponent implements OnInit {
 
       image: {
         image1: {
-          bgImage: 'assets/diya1.jpg',
+          bgImage: 'assets/food_graph.JPG',
           bgSize: '100% 100%',
         },
         image2: {
+          bgImage: 'assets/diya1.jpg',
+          bgSize: '100% 100%',
+        },
+        image3: {
           bgImage: 'assets/diya2.jpg',
           bgSize: '100% 100%',
         },

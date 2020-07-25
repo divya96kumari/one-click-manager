@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { EventDataService } from '../custom-card-overview/event-data.service';
 
 @Component({
   selector: 'app-events',
@@ -54,7 +55,7 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: 'Last day 30th June',
+        text: 'Last day 25th July',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
@@ -116,7 +117,7 @@ export class EventsComponent implements OnInit {
         }
       },
       {
-        text: 'Register your team on or before 5th July',
+        text: 'Register your team on or before 30th July',
         style: {
           'font-size': '16px',
           'font-weight': 'bolder',
@@ -364,6 +365,7 @@ export class EventsComponent implements OnInit {
 
   custom_events = [];
   eventForm;
+  storeEventDetailsArray =[];
 
   customEvent: any = {
     type: "",
@@ -374,7 +376,7 @@ export class EventsComponent implements OnInit {
     description: ""
   }
 
-  constructor() { }
+  constructor(private service: EventDataService) { }
 
   ngOnInit() {
   }
@@ -447,6 +449,12 @@ export class EventsComponent implements OnInit {
       }
 
       console.log('Image', bgImageCard);
+
+      let storeEventDetails = {
+        bg: bgImageCard,
+        info: newCustomEventObj,
+      }
+
       let createEvent = {
         bg: {
           bgImage: bgImageCard,
@@ -495,7 +503,11 @@ export class EventsComponent implements OnInit {
         ]
       }
       this.custom_events.push(createEvent);
+      this.storeEventDetailsArray.push(storeEventDetails);
+      this.service.setEventData(this.storeEventDetailsArray);
     }
     console.log("custom event", this.custom_events);
+    console.log("store event", this.storeEventDetailsArray);
+
   }
 }
