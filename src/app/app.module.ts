@@ -16,6 +16,7 @@ import { FaqComponent } from './faq/faq.component';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { EventOverviewComponent } from './event-overview/event-overview.component';
 import { SafeHtmlPipe } from './cssPipe';
+import { CustomCardOverviewComponent } from './custom-card-overview/custom-card-overview.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SafeHtmlPipe } from './cssPipe';
     BannerComponent,
     FaqComponent,
     EventOverviewComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    CustomCardOverviewComponent
   ],
   imports: [
     BrowserModule,

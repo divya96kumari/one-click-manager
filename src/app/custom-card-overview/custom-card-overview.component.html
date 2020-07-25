@@ -1,34 +1,16 @@
-<div class="main-div" *ngIf="!activeTemplate">
-    <div class="bg-pos" [style.backgroundImage]="'url('+item.bg.bgImage+')'" [style.backgroundSize]="item.bg.bgSize"
-        [style.backgroundPosition]="item.bg.bgPosition"></div>
+<div class="main-div">
+    <div class="bg-pos" [style.backgroundImage]="'url('+item.bg+')'"></div>
     <div class="title">
-        <p [ngStyle]="item.title.style">{{item.title.text}}</p>
+        <p class="title-font">{{item.info.name}}</p>
     </div>
    
-    <div class="clr-row pos" *ngIf="item.htmlCode">
-        <div class="clr-col-7" *ngIf="item.htmlCode">
-            <br>
-            <br>
-            <div *ngIf="item.htmlCode">
-                <div [innerHtml]= "item.htmlCode | safeHtml"></div>
-            </div>
-            <br>
-            <br>
-            <h3 (click)="openFaq = !openFaq" *ngIf="item.faq" style="color: Blue">
-                <clr-icon size="24" shape="angle right" *ngIf="!openFaq"></clr-icon>
-                <clr-icon size="24" shape="angle down" *ngIf="openFaq"></clr-icon>
-                <span style="font-weight: bolder;"> FAQ's</span>
-            </h3>
-
-            <div *ngIf="openFaq">
-
-                <div class="faq-form-dis">
-                    <div *ngFor="let faqItem of item.faq">
-                        <div style="margin-top: 10px;"><b>{{faqItem.ques}}</b></div>
-                        <div style="margin-left: 10px;"><b>{{faqItem.ans}}</b></div>
-                    </div>
-                </div>
-            </div>
+    <div class="clr-row pos" *ngIf="item.info.description">
+        <div class="clr-col-7" *ngIf="item.info.description">
+           <div class="descri">
+            <h3 style="font-weight: bolder;">{{item.info.description}}</h3>
+            <h4> Venue:- {{item.info.venue}}</h4>
+            <h4> Date:- {{item.info.endDdate}}</h4>
+           </div>
 
             <h3 (click)="openRegister = !openRegister" style="color: Green">
                 <clr-icon size="24" shape="angle right" *ngIf="!openRegister"></clr-icon>
@@ -104,29 +86,8 @@
                 </div>
             </div>
 
-
-
-
-
         </div>
-        <div class="clr-col-5" *ngIf="item.image">
-            <div class="clr-row" *ngIf="item.image.image1">
-                <div class="img-pos" [style.backgroundImage]="'url('+item.image.image1.bgImage+')'"
-                    [style.backgroundSize]="item.image.image1.bgSize"></div>
-            </div>
-            <div class="clr-row" *ngIf="item.image.image2">
-                <div class="img-pos" [style.backgroundImage]="'url('+item.image.image2.bgImage+')'"
-                    [style.backgroundSize]="item.image.image2.bgSize"></div>
-            </div>
-            <div class="clr-row" *ngIf="item.image.image3">
-                <div class="img-pos" [style.backgroundImage]="'url('+item.image.image3.bgImage+')'"
-                    [style.backgroundSize]="item.image.image3.bgSize"></div>
-            </div>
-        </div>
+       
     </div>
 </div>
 
-<div *ngIf="activeTemplate" style="margin-left: 10px;">
-    <h2 style="color: red;">We will share the details soon!</h2>
-    <a href="#dashboard" style="margin-top: 30px; font-size: 16px;"> Go back to Dashboard</a>
-</div>
