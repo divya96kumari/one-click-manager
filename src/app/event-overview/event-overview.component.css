@@ -17,7 +17,7 @@
 .title{
     width: 700px;
     height: 80px;
-    top: 260px;
+    top: 262px;
     left: 5%;
     text-align: center;
     background-color: white;
@@ -75,3 +75,12 @@
     width: 100%;
     padding: 30px;
   }
+
+  .desc-dis{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px; margin:5px;
+  }
+
+  
+ 

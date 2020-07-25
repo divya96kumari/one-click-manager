@@ -43,7 +43,7 @@
     <div class="card-div">
         <div class="card_container" *ngFor="let item of later_events">
 
-            <a href="..." class="card clickable">
+            <a [routerLink]="['events', item.id]" class="card clickable">
                 <div class="card-block card-size">
                     <div class="card-bg" [style.backgroundImage]="'url('+item.bg.bgImage+')'"
                         [style.backgroundSize]="item.bg.bgSize" [style.backgroundPosition]="item.bg.bgPosition"></div>

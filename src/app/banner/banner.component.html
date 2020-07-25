@@ -1,16 +1,15 @@
 <div [@filterAnimation]="banner_event.length" class="main-div">
     <div *ngFor='let i of countArray'>
         <div *ngFor="let event of banner_event">
-            <div class="bg-div" [style.backgroundImage]="'url('+event.bg.bgImage+')'">
-                <div [ngStyle]="event.event_name.style">
+            <div class="bg-div" [style.backgroundImage]="'url('+event.bg.bgImage+')'" [style.backgroundSize]="event.bg.bgSize"
+            [style.backgroundPosition]="event.bg.bgPosition">
+                <!-- <div [ngStyle]="event.event_name.style">
                     {{event.event_name.title}}
+                </div> -->
+                <div class='des-display' *ngIf="event.htmlCode">
+                    <div [innerHtml]="event.htmlCode | safeHtml"></div>
                 </div>
-                <p [ngStyle]="event.event_description.style">
-                    {{event.event_description.title}}
-                </p>
-
-                <div [ngStyle]="event.event_details.style">{{event.event_details.title}}</div>
-                <div class="timer-display">
+                <div class="timer-display" *ngIf="event.event_date">
                     <timer [eventDate]="event.event_date"></timer>
                 </div>
             </div>

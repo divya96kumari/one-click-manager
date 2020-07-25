@@ -15,6 +15,7 @@ import { BannerComponent } from './banner/banner.component';
 import { FaqComponent } from './faq/faq.component';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { EventOverviewComponent } from './event-overview/event-overview.component';
+import { SafeHtmlPipe } from './cssPipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EventOverviewComponent } from './event-overview/event-overview.componen
     TimerComponent,
     BannerComponent,
     FaqComponent,
-    EventOverviewComponent
+    EventOverviewComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
