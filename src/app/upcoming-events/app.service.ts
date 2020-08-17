@@ -1,17 +1,22 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 // import { Hero } from './hero';
 
-// const api = '/api';
+const api = '/api';
 
-// @Injectable()
-// export class UserService {
+@Injectable({
+    providedIn: 'root'
+})
+export class UserService {
+
+  constructor(private http: HttpClient){
+
+  }
+
+  adduser(data : any) {
+    return this.http.post<any>(`${api}//`, data);
+  }
+
   
-
-//   adduser(hero: Hero) {
-//     return this.http.post<Hero>(`${api}/hero/`, hero);
-//   }
-
-  
-// }
+}

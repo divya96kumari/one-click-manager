@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from './upcoming-events/app.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
     username: "",
     password: ""
   };
+  constructor(private appService: UserService) {}
 
   DashboardActive=false;
   FaqActive=false;
@@ -76,4 +78,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+
+  onSignIn(){
+    this.appService.adduser(this.form).subscribe(response=> {
+
+    });
+  }
 }

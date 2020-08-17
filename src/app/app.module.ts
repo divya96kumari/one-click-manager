@@ -17,6 +17,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
 import { EventOverviewComponent } from './event-overview/event-overview.component';
 import { SafeHtmlPipe } from './cssPipe';
 import { CustomCardOverviewComponent } from './custom-card-overview/custom-card-overview.component';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CustomCardOverviewComponent } from './custom-card-overview/custom-card-
     CustomCardOverviewComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
