@@ -11,11 +11,10 @@ const api = '/api';
 export class UserService {
 
   constructor(private http: HttpClient){
-
   }
 
-  adduser(data : any) {
-    return this.http.post<any>(`${api}//`, data);
+  addUser(data : any) {
+    return this.http.post('http://localhost:3000/api/users', data);
   }
 
   

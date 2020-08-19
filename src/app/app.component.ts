@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './upcoming-events/app.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     username: "",
     password: ""
   };
-  constructor(private appService: UserService) {}
+  constructor(private userService: UserService) {}
 
   DashboardActive=false;
   FaqActive=false;
@@ -47,6 +47,9 @@ export class AppComponent implements OnInit {
     this.username = this.form.username;
     this.openLoginModal = false;
     this.openSignupModal = false;
+    this.userService.addUser(this.form).subscribe(response=> {
+      console.log('res', response);
+    });
   }
 
   setActive(choice: string): void {
@@ -78,10 +81,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-
   onSignIn(){
-    this.appService.adduser(this.form).subscribe(response=> {
-
+    this.userService.addUser(this.form).subscribe(response=> {
+      console.log('res', response);
     });
   }
 }

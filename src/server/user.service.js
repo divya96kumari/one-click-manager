@@ -1,13 +1,13 @@
-const Hero = require('./user.model');
+const User = require('./user.model');
 
 require('./mongo').connect();
 
-function getusers() {
+function getUsers() {
   const docquery = User.find({});
   docquery
     .exec()
-    .then(Users => {
-      res.status(200).json(Users);
+    .then(users => {
+      res.status(200).json(users);
     })
     .catch(error => {
       res.status(500).send(error);
@@ -15,15 +15,23 @@ function getusers() {
     });
 }
 function postUser(req, res) {
-    const originaluser = { email: req.body.email, username: req.body.username,password: req.body.password };
+    const originaluser = { email: req.body.email, username: req.body.username, password: req.body.password };
     const user = new User(originaluser);
+    console.log('data', originaluser);
     user.save(error => {
       if (checkServerError(res, error)) return;
-      res.status(201).json(user);
+      res.status(200).json(user);
       console.log('User created successfully!');
     });
   }
+
+  function checkServerError(res, error) {
+    if (error) {
+      res.status(500).send(error);
+      return error;
+    }
+  }
 module.exports = {
-  getHeroes,
+  getUsers,
   postUser
 };
