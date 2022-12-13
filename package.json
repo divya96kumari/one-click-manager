@@ -25,7 +25,7 @@
     "@clr/ui": "2.4.4",
     "@webcomponents/custom-elements": "^1.0.0",
     "mongoose": "^4.11.14",
-    "express": "^4.16.0",
+    "express": "^4.17.3",
     "core-js": "^2.4.1",
     "ngx-bar-rating": "^1.1.0",
     "ngx-countdown-timer": "^0.1.9",
